@@ -1,0 +1,1 @@
+from .hyperscale_mcp_server import run as run

@@ -1,0 +1,29 @@
+[project]
+name = "hyperlight-hyperscale-mcp"
+version = "0.0.1"
+description = "MCP server for hyperscale testing"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+    "mcp[cli]>=1.0.0",
+    "hyperlight-hyperscale",
+    "psutil",
+]
+authors = [
+    {name = "Ada Lundhe", email = "adalundhe@lundhe.audio"}
+]
+license = { file = "LICENSE" }
+
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+hyperscale-mcp = "hyperscale_mcp.hyperscale_mcp_server:run"
+condabuild = "hyperscale_mcp.build_server:build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+asyncio_default_fixture_loop_scope = "function"
